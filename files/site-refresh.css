@@ -1,0 +1,550 @@
+/* Site visual refresh — ד״ר יואל ברג
+   Calm, clinical, Hebrew-first. Overrides Weebly theme without changing HTML structure. */
+
+:root {
+  --ink: #1f2a28;
+  --ink-soft: #3d4a47;
+  --muted: #6b7874;
+  --paper: #ffffff;
+  --mist: #eef2f0;
+  --mist-deep: #e2e8e5;
+  --line: #d5ddd9;
+  --accent: #2d5c56;
+  --accent-hover: #234a45;
+  --accent-soft: #dce8e5;
+  --warm: #b07a45;
+  --warm-soft: #f3ebe2;
+  --hero-overlay: linear-gradient(
+    165deg,
+    rgba(20, 40, 38, 0.72) 0%,
+    rgba(31, 55, 52, 0.55) 45%,
+    rgba(45, 70, 65, 0.65) 100%
+  );
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 8px 30px rgba(31, 42, 40, 0.06);
+  --shadow-header: 0 1px 0 rgba(31, 42, 40, 0.06), 0 8px 24px rgba(31, 42, 40, 0.04);
+  --font-body: 'Heebo', 'Arial Hebrew', Arial, sans-serif;
+  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink-soft) !important;
+  font-family: var(--font-body) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  background: var(--mist) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+#wrapper {
+  background: var(--mist) !important;
+}
+
+#wrapper-content {
+  max-width: 1120px !important;
+  background: var(--paper) !important;
+  box-shadow: var(--shadow-soft);
+}
+
+a {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  transition: color 0.2s var(--ease);
+}
+
+a:hover {
+  color: var(--warm) !important;
+}
+
+/* ---------- Typography ---------- */
+h2,
+.wsite-content-title,
+#banner h2,
+.blog-title,
+h2#wsite-com-title {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  letter-spacing: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.wsite-content-title {
+  font-size: 1.85em !important;
+  margin-bottom: 1.1em !important;
+}
+
+div.paragraph,
+.paragraph,
+p {
+  font-family: var(--font-body) !important;
+  font-size: 1.05em !important;
+  line-height: 1.75 !important;
+  color: var(--ink-soft) !important;
+  margin-bottom: 1.4em !important;
+}
+
+/* Replace Weebly’s harsh blue inline fonts with the accent palette */
+font[color="#1a1ae9"],
+font[color="#1b0df6"],
+font[color="#0007ff"],
+font[color="#1711f4"],
+font[color="#1A1AE9"],
+font[color="#1B0DF6"],
+font[color="#0007FF"],
+font[color="#1711F4"] {
+  color: var(--accent) !important;
+}
+
+font[color="#515151"],
+font[color="#626262"] {
+  color: var(--ink-soft) !important;
+}
+
+blockquote {
+  border-right: 4px solid var(--accent) !important;
+  border-left: none !important;
+  padding: 0.4em 1.2em 0.4em 0 !important;
+  margin: 1.5em 0 !important;
+  color: var(--ink) !important;
+  background: var(--mist);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ---------- Header ---------- */
+body:not(.splash-page) #header-wrap {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(213, 221, 217, 0.7);
+  box-shadow: var(--shadow-header);
+}
+
+#header {
+  background: transparent !important;
+  height: 88px !important;
+}
+
+.collapse #header {
+  height: 64px !important;
+}
+
+body:not(.splash-page) #main-content {
+  padding-top: 88px !important;
+}
+
+#logo .wsite-logo {
+  font-family: var(--font-display) !important;
+  font-size: 1.55em !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  letter-spacing: 0 !important;
+}
+
+#logo .wsite-logo *,
+#logo #wsite-title {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
+#logo .wsite-logo a {
+  color: var(--ink) !important;
+  text-decoration: none !important;
+}
+
+#banner .wsite-button,
+#banner .wsite-button-inner {
+  background: #fff !important;
+  color: var(--ink) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+#banner .wsite-button:hover {
+  background: var(--warm-soft) !important;
+  color: var(--ink) !important;
+}
+
+/* Reveal hidden site title in header */
+#logo .wsite-title-placeholder {
+  display: none !important;
+}
+
+#logo .wsite-logo > span[style*="display:none"] {
+  display: inline-block !important;
+}
+
+#logo .wsite-logo > span[style*="display:none"] > span[style*="display:none"] {
+  display: inline !important;
+  font-family: var(--font-display) !important;
+  color: var(--ink) !important;
+}
+
+.nav li a,
+#wsite-menus .wsite-menu li a {
+  font-family: var(--font-body) !important;
+  font-size: 0.92em !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: var(--ink-soft) !important;
+  padding: 8px 12px !important;
+  border-radius: 999px;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.nav li a:hover,
+.nav li a:focus,
+.wsite-menu li a:hover,
+.wsite-menu li a:focus {
+  color: var(--accent) !important;
+  background: var(--accent-soft);
+}
+
+#active > a.wsite-menu-item {
+  color: var(--accent) !important;
+  background: var(--accent-soft);
+  font-weight: 600 !important;
+}
+
+#wsite-menus .wsite-menu {
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+#wsite-menus .wsite-menu li a {
+  border-radius: 0 !important;
+  text-align: right !important;
+}
+
+#navmobile {
+  background: var(--mist) !important;
+}
+
+#navmobile a {
+  color: var(--ink) !important;
+  font-weight: 500 !important;
+}
+
+/* ---------- Hero / Banner ---------- */
+#banner-wrap {
+  position: relative !important;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+}
+
+#banner-wrap.wsite-background {
+  background-image:
+    var(--hero-overlay),
+    url("//cdn2.editmysite.com/images/editor/theme-background/stock/Tunnel.jpg") !important;
+  background-size: cover !important;
+  background-position: center 40% !important;
+}
+
+.tall-header-page #banner-wrap {
+  height: 320px !important;
+  min-height: 280px;
+}
+
+.short-header-page #banner-wrap {
+  height: 240px !important;
+}
+
+.title-page #banner-wrap {
+  height: 220px !important;
+}
+
+#banner {
+  position: relative;
+  z-index: 1;
+  padding: 2.5em 2em !important;
+  text-shadow: none !important;
+}
+
+#banner h2,
+.tall-header-page #banner h2,
+.title-page #banner h2,
+.landing-page #banner h2 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.9em, 4vw, 3em) !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  max-width: 18em;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Soften the many <br> spacers in the homepage hero */
+.wsite-page-index #banner h2 {
+  font-size: clamp(2em, 4.2vw, 3.1em) !important;
+}
+
+.wsite-page-index #banner .wsite-headline br {
+  display: none;
+}
+
+.wsite-page-index #banner .wsite-headline br:nth-of-type(n+6) {
+  display: inline;
+}
+
+#banner .paragraph,
+#banner p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* ---------- Main content ---------- */
+#main-wrap {
+  padding-top: 2.75em !important;
+  padding-bottom: 2em !important;
+}
+
+.wsite-image img {
+  border-radius: var(--radius);
+  max-width: 100%;
+  height: auto;
+}
+
+.wsite-page-index .wsite-image {
+  text-align: center !important;
+}
+
+.wsite-page-index .wsite-image img {
+  border-radius: 50%;
+  width: min(260px, 80%);
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 15%;
+  box-shadow: 0 12px 40px rgba(31, 42, 40, 0.12);
+  background: var(--mist);
+}
+
+.wsite-page-index .wsite-spacer {
+  height: 1.5em !important;
+}
+
+.wsite-page-index .wsite-multicol-col .paragraph[style*="text-align:center"] {
+  text-align: center !important;
+  padding: 0 0.5em;
+}
+
+.wsite-multicol-table {
+  border-spacing: 0;
+}
+
+.wsite-multicol-col {
+  vertical-align: top;
+}
+
+/* Gentle entrance */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#banner {
+  animation: fade-up 0.7s var(--ease) both;
+}
+
+#main-wrap {
+  animation: fade-up 0.8s var(--ease) 0.12s both;
+}
+
+/* ---------- Buttons ---------- */
+.wsite-button,
+.blog-button {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: 1.1em 2.4em !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(45, 92, 86, 0.25);
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease) !important;
+}
+
+.wsite-button:hover {
+  background: var(--accent-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(45, 92, 86, 0.3);
+}
+
+.wsite-button-highlight {
+  background: var(--warm) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(176, 122, 69, 0.28);
+}
+
+.wsite-button-highlight:hover {
+  background: #9a6838 !important;
+}
+
+/* ---------- Forms ---------- */
+.wsite-form-input,
+.wsite-search-element-input,
+#commentPostDiv .field input[type=text],
+#commentPostDiv .field textarea,
+select {
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--mist) !important;
+  font-family: var(--font-body) !important;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.wsite-form-input:focus,
+.wsite-form-input--focus,
+.wsite-search-element-input:focus,
+#commentPostDiv .field input[type=text]:focus,
+#commentPostDiv .field textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
+}
+
+.wsite-form-label {
+  color: var(--ink) !important;
+  font-weight: 500 !important;
+}
+
+/* ---------- Footer ---------- */
+#footer-wrap {
+  margin-top: 3em !important;
+  border-top: 1px solid var(--line) !important;
+  color: var(--muted) !important;
+  font-size: 0.9em !important;
+  padding: 2em 0 !important;
+  text-align: center;
+  background: linear-gradient(180deg, transparent, var(--mist) 80%);
+}
+
+.wsite-footer {
+  color: var(--muted);
+}
+
+/* ---------- RTL polish ---------- */
+#main-wrap {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+ul.wsite-menu-default,
+.paragraph {
+  direction: rtl !important;
+}
+
+.nav {
+  direction: rtl;
+}
+
+div.paragraph ul,
+div.paragraph ol {
+  padding-right: 1.5em !important;
+  padding-left: 0 !important;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 992px) {
+  body:not(.splash-page) #header-wrap,
+  #header,
+  .collapse #header {
+    height: auto !important;
+    min-height: 72px !important;
+  }
+
+  body:not(.splash-page) #main-content {
+    padding-top: 100px !important;
+  }
+
+  #header {
+    padding-top: 1em !important;
+    padding-bottom: 0.75em !important;
+  }
+
+  .tall-header-page #banner-wrap,
+  .short-header-page #banner-wrap,
+  .title-page #banner-wrap {
+    height: auto !important;
+    min-height: 200px !important;
+  }
+
+  #banner {
+    padding: 3.5em 1.5em !important;
+  }
+
+  .wsite-page-index .wsite-image {
+    text-align: center !important;
+  }
+
+  .wsite-page-index .wsite-image img {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px !important;
+  }
+
+  body:not(.splash-page) #main-content {
+    padding-top: 52px !important;
+  }
+
+  #header-wrap,
+  #header,
+  .collapse #header {
+    min-height: 52px !important;
+  }
+
+  #banner h2,
+  .tall-header-page #banner h2 {
+    font-size: 1.75em !important;
+  }
+
+  #main-wrap {
+    padding-top: 1.75em !important;
+  }
+
+  #navmobile {
+    text-align: right !important;
+  }
+
+  #navmobile a,
+  #navmobile li {
+    text-align: right !important;
+  }
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #banner,
+  #main-wrap {
+    animation: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
