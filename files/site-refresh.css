@@ -25,7 +25,8 @@
   --shadow-soft: 0 8px 30px rgba(31, 42, 40, 0.06);
   --shadow-header: 0 1px 0 rgba(31, 42, 40, 0.06), 0 8px 24px rgba(31, 42, 40, 0.04);
   --font-body: 'Heebo', 'Arial Hebrew', Arial, sans-serif;
-  --font-display: 'Frank Ruhl Libre', 'Times New Roman', serif;
+  /* One family site-wide — headings and body both use Heebo. */
+  --font-display: 'Heebo', 'Arial Hebrew', Arial, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -535,6 +536,26 @@ div.paragraph ol {
   #navmobile li {
     text-align: right !important;
   }
+}
+
+/* Force Heebo everywhere Weebly still names Montserrat / Lato / Frank */
+.wsite-content-title,
+#banner h2,
+.blog-title,
+h2#wsite-com-title,
+#logo .wsite-logo,
+#logo #wsite-title,
+.wsite-headline,
+.wsite-header-section .wsite-content-title,
+.wsite-com-category-subcategory-name-text,
+.galleryCaptionInnerText,
+#wsite-com-product-list .wsite-com-link-text,
+#wsite-com-product-title,
+.wsite-button-inner,
+.wsite-menu-default a,
+.wsite-menu a,
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-body) !important;
 }
 
 /* Prefer reduced motion */
